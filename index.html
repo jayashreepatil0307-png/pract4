@@ -1,12 +1,80 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>sample</title>
+    <meta charset="UTF-8">
+    <title>Love Percentage Calculator</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(to right, #ff758c, #ff7eb3);
+            text-align: center;
+            padding-top: 50px;
+            color: white;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 400px;
+            margin: auto;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+        input {
+            padding: 10px;
+            margin: 10px 0;
+            width: 80%;
+            border: none;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #fff;
+            color: #ff4081;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #fce4ec;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-<h1>this is a heading</h1>
-<h2>jayashree patil</h2>
-<h3>mca_1</h2>
-<p>Document content goes here...
-</p>
+
+    <div class="container">
+        <h1>❤️ Love Calculator ❤️</h1>
+        <input type="text" id="name1" placeholder="Your Name">
+        <br>
+        <input type="text" id="name2" placeholder="Partner's Name">
+        <br>
+        <button onclick="calculateLove()">Calculate Love %</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function calculateLove() {
+            const name1 = document.getElementById("name1").value.trim();
+            const name2 = document.getElementById("name2").value.trim();
+            const result = document.getElementById("result");
+
+            if (name1 === "" || name2 === "") {
+                result.innerText = "Please enter both names!";
+                return;
+            }
+
+            // Just a random percentage for fun
+            const lovePercent = Math.floor(Math.random() * 101);
+
+            result.innerText = `${name1} ❤️ ${name2} = ${lovePercent}% Love`;
+        }
+    </script>
+
 </body>
 </html>
